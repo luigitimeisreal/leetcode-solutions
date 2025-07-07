@@ -1,5 +1,17 @@
 # leetcode-solutions
 All of my Leetcode solutions. Some are efficient and optimized for memory, while others are more of a work in progress.
+## Problem 171. Excel Sheet Column Number
+I think you can understand the solution if you know how to transform binary to decimal. We need to iterate through both in normal order and in reverse order (similar as two pointers). Every character has an index counting down to zero that is represented by "i" variable and the "j" variable iterates normally starting from the start. In binary, we would take the number represented by that index and multiply by 2 (the number of possible characters in binary) powered by its index. Now we need to represent 26 characters instead of 2, but the logic is the same. The numeric value of each character is taken with the ord() function and by sustracting 64 to get numbers 1 to 26 starting from A.
+Language: Python
+```python
+class Solution:
+    def titleToNumber(self, columnTitle: str) -> int:
+        res, j = 0, 0
+        for i in range(len(columnTitle) - 1, -1, -1):
+            res += 26 ** i * (ord(columnTitle[j]) - 64)
+            j += 1
+        return res
+````
 ## Problem 441. Arranging Coins
 Basically, we simulate the pyramid shown in the example. The for loop iterates through the rows and when the counter is negative it means that the row is incomplete, so we return the previous row. In each row there can be exactly the same coins as the number of the row.
 Language: Python
