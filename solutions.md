@@ -1,5 +1,18 @@
 # leetcode-solutions
 All of my Leetcode solutions. Some are efficient and optimized for memory, while others are more of a work in progress.
+## Problem 441. Arranging Coins
+Basically, we simulate the pyramid shown in the example. The for loop iterates through the rows and when the counter is negative it means that the row is incomplete, so we return the previous row. In each row there can be exactly the same coins as the number of the row.
+Language: Python
+```python
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        coins = n
+        for row in range(1, n + 1):
+            coins -= row
+            if coins < 0:
+                return row - 1
+        return n
+```
 ## Problem 2176. Count Equal and Divisible Pairs in an Array
 Language: JavaScript
 ```javascript
@@ -20,17 +33,4 @@ var countPairs = function(nums, k) {
     }
     return pairs.length;
 };
-```
-## Problem 441. Arranging Coins
-Basically, we simulate the pyramid shown in the example. The for loop iterates through the rows and when the counter is negative it means that the row is incomplete, so we return the previous row. In each row there can be exactly the same coins as the number of the row.
-Language: Python
-```python
-class Solution:
-    def arrangeCoins(self, n: int) -> int:
-        coins = n
-        for row in range(1, n + 1):
-            coins -= row
-            if coins < 0:
-                return row - 1
-        return n
 ```
