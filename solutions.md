@@ -1,6 +1,7 @@
 # leetcode-solutions
 All of my Leetcode solutions. some are efficient and optimized for memory, while others are more of a work in progress.
 ## Problem 2176. Count Equal and Divisible Pairs in an Array
+Language: JavaScript
 ```javascript
 /**
  * @param {number[]} nums
