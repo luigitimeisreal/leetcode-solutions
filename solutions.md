@@ -60,3 +60,29 @@ var countPairs = function(nums, k) {
     return pairs.length;
 };
 ```
+## Problem 2529. Maximum Count of Positive Integer and Negative Integer
+Language: JavaScript
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maximumCount = function(nums) {
+    let positive = 0;
+    let negative = 0;
+    for (let num of nums) {
+        if (num < 0) {
+            negative++;
+        }
+        if (num > 0) {
+            positive++;
+        }
+    }
+    if (negative > positive) {
+        return negative;
+    } else {
+        return positive;
+    }
+    
+};
+```
