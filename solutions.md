@@ -86,3 +86,17 @@ var maximumCount = function(nums) {
     
 };
 ```
+## Problem 3024. Type of Triangle
+The solution can only have four cases. The first one is described in one of the examples and it consists in calculating the sum of two sides and checking if they are less or equal to the remaining side to check if the triangle exists. In the second case we check that all the sides are equal. Since there are only three sides we can directly check. In the third case we check if 2 sides are equal (there are only 3 possible combinations). Finally, in the last case there are again 3 combinations that check the 3 sides are different.
+```python3 []
+class Solution:
+    def triangleType(self, nums: List[int]) -> str:
+        if nums[0] + nums[1] <= nums[2] or nums[0] + nums[2] <= nums[1] or nums[1] + nums[2] <= nums[0]:
+            return "none"
+        if nums[0] == nums[1] and nums[1] == nums[2]:
+            return "equilateral"
+        if nums[0] == nums[1] or nums[0] == nums[2] or nums[1] == nums[2]:
+            return "isosceles"
+        if nums[0] != nums[1] and nums[0] != nums[2] and nums[1] != nums[2]:
+            return "scalene"
+```
