@@ -40,6 +40,7 @@ class Solution:
         return n
 ```
 ## Problem 1920. Build Array from Permutation
+Language: Python
 ```python
 class Solution:
     def buildArray(self, nums: List[int]) -> List[int]:
