@@ -39,6 +39,15 @@ class Solution:
                 return row - 1
         return n
 ```
+## Problem 1920. Build Array from Permutation
+```python
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        res = []
+        for i, num in enumerate(nums):
+            res.append(nums[nums[i]])
+        return res
+```
 ## Problem 2176. Count Equal and Divisible Pairs in an Array
 Language: JavaScript
 ```javascript
