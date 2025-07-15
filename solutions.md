@@ -111,6 +111,28 @@ class Solution:
         if nums[0] != nums[1] and nums[0] != nums[2] and nums[1] != nums[2]:
             return "scalene"
 ```
+## Problem 3136. Valid Word
+Language: Python
+```python
+class Solution:
+    def isValid(self, word: str) -> bool:
+        vowels = "aeiouAEIOU"
+        num_vowels = 0
+        num_consonants = 0
+        for char in word:
+            if not char.isalnum():
+                return False
+            else:
+                if char in vowels:
+                    num_vowels += 1
+                else:
+                    if not char.isdigit():
+                        num_consonants += 1
+        if len(word) >= 3 and num_vowels >= 1 and num_consonants >= 1:
+            return True
+        return False
+
+```
 ## Problem 3423. Maximum Difference Between Adjacent Elements in a Circular Array
 Basically, we calculate the sum of the same array twice generating 2 cycles of the first array. Then we iterate with every number(i) and the next one(j), comparing the absolute value of the substraction using abs(). If we find a higher difference, we update the value and keep searching leading to the end result.
 Language: Python
