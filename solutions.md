@@ -96,6 +96,16 @@ var maximumCount = function(nums) {
     
 };
 ```
+## Problem 2942. Find Words Containing Character
+```python
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        res = []
+        for i in range(len(words)):
+            if x in words[i]:
+                res.append(i)
+        return res
+```
 ## Problem 3024. Type of Triangle
 The solution can only have four cases. The first one is described in one of the examples and it consists in calculating the sum of two sides and checking if they are less or equal to the remaining side to check if the triangle exists. In the second case we check that all the sides are equal. Since there are only three sides we can directly check. In the third case we check if 2 sides are equal (there are only 3 possible combinations). Finally, in the last case there are again 3 combinations that check the 3 sides are different.
 Language: Python
