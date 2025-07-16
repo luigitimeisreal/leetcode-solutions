@@ -97,6 +97,7 @@ var maximumCount = function(nums) {
 };
 ```
 ## Problem 2942. Find Words Containing Character
+Language: Python
 ```python
 class Solution:
     def findWordsContaining(self, words: List[str], x: str) -> List[int]:
@@ -104,6 +105,29 @@ class Solution:
         for i in range(len(words)):
             if x in words[i]:
                 res.append(i)
+        return res
+```
+## Problem 2965. Find Missing and Repeated Values
+Language: Python
+```python
+class Solution:
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        appearances = {}
+        res = []
+        for i in range(len(grid)):
+            for j in range(len(grid)):
+                if grid[i][j] not in appearances.keys():
+                    appearances[grid[i][j]] = 1
+                else:
+                    appearances[grid[i][j]] += 1
+        for appearance in appearances.keys():
+            if appearances[appearance] == 2:
+                res.append(appearance)
+                break
+        for num in range(1, len(grid) * len(grid) + 1):
+            if num not in appearances.keys():
+                res.append(num)
+                break
         return res
 ```
 ## Problem 3024. Type of Triangle
