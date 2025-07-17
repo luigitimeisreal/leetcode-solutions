@@ -49,6 +49,20 @@ class Solution:
             res.append(nums[nums[i]])
         return res
 ```
+## Problem 2016. Maximum Difference Between Increasing Elements
+Language: Python
+```python
+class Solution:
+    def maximumDifference(self, nums: List[int]) -> int:
+        max_difference = 0
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[j] - nums[i] > max_difference:
+                    max_difference = nums[j] - nums[i]
+        if max_difference == 0: 
+            return -1
+        return max_difference
+```
 ## Problem 2176. Count Equal and Divisible Pairs in an Array
 Language: JavaScript
 ```javascript
