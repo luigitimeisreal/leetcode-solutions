@@ -195,3 +195,23 @@ class Solution:
                 max_difference = abs(new_nums[j] - new_nums[i])
         return max_difference
 ```
+## Problem 3442. Maximum Difference Between Even and Odd Frequency I
+Language: Python
+```python
+class Solution:
+    def maxDifference(self, s: str) -> int:
+        frequencies = {}
+        for char in s:
+            if char in frequencies.keys():
+                frequencies[char] += 1
+            else:
+                frequencies[char] = 1
+        max_odd = 0
+        min_even = float('inf')
+        for char2 in frequencies.keys():
+            if frequencies[char2] % 2 == 0 and frequencies[char2] < min_even:
+                min_even = frequencies[char2]
+            if frequencies[char2] % 2 == 1 and frequencies[char2] > max_odd:
+                max_odd = frequencies[char2]
+        return max_odd - min_even
+```
