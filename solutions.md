@@ -84,6 +84,36 @@ var countPairs = function(nums, k) {
     return pairs.length;
 };
 ```
+## Problem 2460. Apply Operations to an Array
+Language: JavaScript
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var applyOperations = function(nums) {
+    for(let i = 0; i < nums.length - 1; i++) {
+        j = i + 1;
+        if (nums[i] === nums[j]) {
+            nums[i] *= 2;
+            nums[j] = 0;
+        }
+    }
+    let res = [];
+    let zeroes = 0;
+    for(let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            zeroes++;
+        } else {
+            res.push(nums[i]);
+        }
+    }
+    for (let i = 0; i < zeroes; i++) {
+        res.push(0);
+    }
+    return res;
+};
+```
 ## Problem 2529. Maximum Count of Positive Integer and Negative Integer
 Language: JavaScript
 ```javascript
