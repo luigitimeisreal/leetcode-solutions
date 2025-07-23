@@ -211,6 +211,24 @@ class Solution:
         return False
 
 ```
+## Problem 3289. The Two Sneaky Numbers of Digitville
+We start by creating a dictionary tracking the appearances of every number. Then we loop through that dictionary and if we find any number appearing 2 times, we add it to the result array.
+Language: Python
+```python
+class Solution:
+    def getSneakyNumbers(self, nums: List[int]) -> List[int]:
+        appearances = {}
+        res = []
+        for num in nums:
+            if num not in appearances.keys():
+                appearances[num] = 1
+            else:
+                appearances[num] += 1
+        for num in appearances.keys():
+            if appearances[num] == 2:
+                res.append(num)
+        return res
+```
 ## Problem 3423. Maximum Difference Between Adjacent Elements in a Circular Array
 Basically, we calculate the sum of the same array twice generating 2 cycles of the first array. Then we iterate with every number(i) and the next one(j), comparing the absolute value of the substraction using abs(). If we find a higher difference, we update the value and keep searching leading to the end result.
 Language: Python
