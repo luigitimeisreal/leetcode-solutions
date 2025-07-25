@@ -1,5 +1,17 @@
 # leetcode-solutions
 All of my Leetcode solutions. Some are efficient and optimized for memory, while others are more of a work in progress and may have bad practices. Some of them feature explanations.
+## Problem 28. Find the Index of the First Occurrence in a String
+We start by looping through the haystack string and using a "sliding window" of the same length as needle and checking if the substring is the same as needle.
+(I don't know if this is the official solution)
+```python
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        for i in range(0, len(haystack)):
+            j = i + len(needle)
+            if haystack[i:j] == needle:
+                return i
+        return -1
+```
 ## Problem 69. Sqrt(x)
 We start by creating a counter which goes up and in every iteration it's multiplied by itself and the result is saved in a variable called power. Then, if the power of any number is bigger than x, we return the previous number. We check if it's bigger because any x in the range of the power of the previous number and the current one is guaranteed to be truncated to the previous number (For example, every number in the range 4-9 will give the result of 2). Language: JavaScript
 ```javascript
