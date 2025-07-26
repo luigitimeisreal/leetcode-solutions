@@ -51,6 +51,22 @@ class Solution:
                 return row - 1
         return n
 ```
+## Prblem 1716. Calculate Money in Leetcode Bank
+Language: Python
+```python
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        normal_day, mondays, total = 1, 1, 0
+        for i in range(n):
+            if i % 7 == 0 and i > 0:
+                mondays += 1
+                total += mondays
+                normal_day = mondays + 1
+            else:
+                total += normal_day
+                normal_day += 1
+        return total
+```
 ## Problem 1920. Build Array from Permutation
 Language: Python
 ```python
