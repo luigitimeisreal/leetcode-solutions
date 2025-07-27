@@ -112,6 +112,20 @@ var countPairs = function(nums, k) {
     return pairs.length;
 };
 ```
+## Problem 2395. Find Subarrays With Equal Sum
+Language: Python
+```python
+class Solution:
+    def findSubarrays(self, nums: List[int]) -> bool:
+        sums = []
+        for i in range(len(nums) - 1):
+            j = i + 1
+            if nums[i] + nums[j] in sums:
+                return True
+            sums.append(nums[i] + nums[j])
+        return False
+
+```
 ## Problem 2460. Apply Operations to an Array
 Language: JavaScript
 ```javascript
