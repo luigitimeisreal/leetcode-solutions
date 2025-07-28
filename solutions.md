@@ -51,6 +51,28 @@ class Solution:
                 return row - 1
         return n
 ```
+## Problem 1078. Occurrences After Bigram
+Language: JavaScript
+```javascript
+/**
+ * @param {string} text
+ * @param {string} first
+ * @param {string} second
+ * @return {string[]}
+ */
+var findOcurrences = function(text, first, second) {
+    let words = text.split(" ");
+    let res = [];
+    for(let i = 0; i < words.length - 2; i++) {
+        let j = i + 1;
+        let k = i + 2;
+        if (words[i] === first && words[j] === second) {
+            res.push(words[k]);
+        }
+    }
+    return res;
+};
+```
 ## Prblem 1716. Calculate Money in Leetcode Bank
 Language: Python
 ```python
