@@ -204,6 +204,20 @@ var maximumCount = function(nums) {
     
 };
 ```
+## Problem 2710. Remove Trailing Zeros From a String
+First, we need to check if the last character is a zero. If it is, we count the number of zeros starting from the last digit. Then we return the substring from the start up to the first trailing zero. Language: Python
+```python
+class Solution:
+    def removeTrailingZeros(self, num: str) -> str:
+        res = []
+        zeros = 0
+        if num[len(num) - 1] == "0":
+            for i in range(len(num) - 1, -1, -1):
+                zeros += 1
+                if num[i - 1] != "0":
+                    break
+        return num[0:len(num) - zeros]
+```
 ## Problem 2942. Find Words Containing Character
 Language: Python
 ```python
