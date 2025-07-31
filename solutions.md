@@ -38,6 +38,25 @@ class Solution:
             j += 1
         return res
 ````
+## Problem 345. Reverse Vowels of a String
+We are using two pointers, one at the left and one at the right. At the moment the left pointer reaches the right one we'll stop iterating. The left and right pointers will move in one iteration if the letter is a consonant. If the two letters are vowels, we swap them and continue to the next iteration.
+```python
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        vowels = "aeiouAEIOU"
+        i, j = 0, len(s) - 1
+        s = list(s)
+        while i < j:
+            if s[i] in vowels and s[j] in vowels:
+                s[i], s[j] = s[j], s[i]
+                j -= 1
+                i += 1
+            elif s[i] not in vowels:
+                i += 1
+            elif s[j] not in vowels:
+                j -= 1
+        return ''.join(s)
+```
 ## Problem 441. Arranging Coins
 Basically, we simulate the pyramid shown in the example. The for loop iterates through the rows and when the counter is negative it means that the row is incomplete, so we return the previous row. In each row there can be exactly the same coins as the number of the row.
 Language: Python
