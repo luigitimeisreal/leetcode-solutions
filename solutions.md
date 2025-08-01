@@ -286,6 +286,19 @@ class Solution:
         if nums[0] != nums[1] and nums[0] != nums[2] and nums[1] != nums[2]:
             return "scalene"
 ```
+## Problem 3083. Existence of a Substring in a String and Its Reverse
+Language: Python
+```python
+class Solution:
+    def isSubstringPresent(self, s: str) -> bool:
+        reversed = s[::-1]
+        for i in range(len(s) - 1):
+            j = i + 1
+            print(s[i:i+2])
+            if s[i:i+2] in reversed:
+                return True
+        return False
+```
 ## Problem 3136. Valid Word
 Language: Python
 ```python
