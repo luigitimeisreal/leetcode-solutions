@@ -70,6 +70,29 @@ class Solution:
                 return row - 1
         return n
 ```
+## Problem 965. Univalued Binary Tree
+Language: Python
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isUnivalTree(self, root: Optional[TreeNode]) -> bool:
+        queue = [root]
+        value = root.val
+        while len(queue) > 0:
+            current = queue.pop()
+            if current.val != value:
+                return False
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+        return True
+```
 ## Problem 1078. Occurrences After Bigram
 Language: JavaScript
 ```javascript
