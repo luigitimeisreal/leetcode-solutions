@@ -293,8 +293,6 @@ class Solution:
     def isSubstringPresent(self, s: str) -> bool:
         reversed = s[::-1]
         for i in range(len(s) - 1):
-            j = i + 1
-            print(s[i:i+2])
             if s[i:i+2] in reversed:
                 return True
         return False
