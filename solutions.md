@@ -176,6 +176,27 @@ var countPairs = function(nums, k) {
     return pairs.length;
 };
 ```
+## Problem 2124. Check if All A's Appears Before All B's
+We initialize a boolean variable at the start of the program checking if whle iterating the string, we have reached the first B. If we then find an a after b, we return false. Otherwise, we return true at the end of the string.
+Language: JavaScript
+```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var checkString = function(s) {
+    firstBReached = false;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "b") {
+            firstBReached = true;
+        }
+        if (s[i] === "a" && firstBReached) {
+            return false;
+        }
+    }
+    return true;
+};
+```
 ## Problem 2395. Find Subarrays With Equal Sum
 Language: Python
 ```python
