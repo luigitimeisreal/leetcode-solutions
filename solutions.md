@@ -155,27 +155,6 @@ class Solution:
             return -1
         return max_difference
 ```
-## Problem 2176. Count Equal and Divisible Pairs in an Array
-Language: JavaScript
-```javascript
-/**
- * @param {number[]} nums
- * @param {number} k
- * @return {number}
- */
-var countPairs = function(nums, k) {
-    pairs = [];
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = 0; j < nums.length; j++) {
-            currentPair = [i, j].sort();
-            if (nums[i] === nums[j] && i < j && ((i * j) % k === 0) && !pairs.includes(currentPair)) {
-                pairs.push(currentPair);
-            }
-        }
-    }
-    return pairs.length;
-};
-```
 ## Problem 2124. Check if All A's Appears Before All B's
 We initialize a boolean variable at the start of the program checking if whle iterating the string, we have reached the first B. If we then find an a after b, we return false. Otherwise, we return true at the end of the string.
 Language: JavaScript
@@ -195,6 +174,27 @@ var checkString = function(s) {
         }
     }
     return true;
+};
+```
+## Problem 2176. Count Equal and Divisible Pairs in an Array
+Language: JavaScript
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var countPairs = function(nums, k) {
+    pairs = [];
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 0; j < nums.length; j++) {
+            currentPair = [i, j].sort();
+            if (nums[i] === nums[j] && i < j && ((i * j) % k === 0) && !pairs.includes(currentPair)) {
+                pairs.push(currentPair);
+            }
+        }
+    }
+    return pairs.length;
 };
 ```
 ## Problem 2395. Find Subarrays With Equal Sum
