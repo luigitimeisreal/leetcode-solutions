@@ -197,6 +197,17 @@ var countPairs = function(nums, k) {
     return pairs.length;
 };
 ```
+## Problem 2185. Counting Words With a Given Prefix
+Language: Python
+```python
+class Solution:
+    def prefixCount(self, words: List[str], pref: str) -> int:
+        res = 0
+        for word in words:
+            if word[0:len(pref)] == pref:
+                res += 1
+        return res
+```
 ## Problem 2395. Find Subarrays With Equal Sum
 Language: Python
 ```python
