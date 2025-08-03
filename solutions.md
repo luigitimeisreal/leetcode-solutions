@@ -70,6 +70,26 @@ class Solution:
                 return row - 1
         return n
 ```
+## Problem 692. Top K Frequent Words
+Language:Python
+```python
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        frequencies = {}
+        res = []
+        for word in words:
+            if word not in frequencies.keys():
+                frequencies[word] = 1
+            else:
+                frequencies[word] += 1
+        for i in range(k):
+            for word in sorted(frequencies.keys()):
+                if frequencies[word] == max(frequencies.values()):
+                    res.append(word)
+                    frequencies.pop(word)
+                    break
+        return res
+```
 ## Problem 965. Univalued Binary Tree
 Language: Python
 ```python
