@@ -26,6 +26,18 @@ var mySqrt = function(x) {
     }
 };
 ```
+## Problem 151. Reverse Words in a String
+I don`t know if using rstrip() is allowed.
+```python
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        res = ""
+        words = s.split(" ")
+        for i in range(len(words) - 1, -1, -1):
+            if words[i] != "":
+                res = f"{res}{words[i]} "
+        return res.rstrip()
+```
 ## Problem 171. Excel Sheet Column Number
 I think you can understand the solution if you know how to transform binary to decimal. We need to iterate through both in normal order and in reverse order (similar as two pointers). Every character has an index counting down to zero that is represented by "i" variable and the "j" variable iterates normally starting from the start. In binary, we would take the number represented by that index and multiply by 2 (the number of possible characters in binary) powered by its index. Now we need to represent 26 characters instead of 2, but the logic is the same. The numeric value of each character is taken with the ord() function and by sustracting 64 to get numbers 1 to 26 starting from A.
 Language: Python
