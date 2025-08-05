@@ -50,6 +50,25 @@ class Solution:
             j += 1
         return res
 ````
+## Problem 242. Valid Anagram
+Language: Python
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        appearances_s = {}
+        appearances_t = {}
+        for letter in s:
+            if letter not in appearances_s.keys():
+                appearances_s[letter] = 1
+            else:
+                appearances_s[letter] += 1
+        for letter in t:
+            if letter not in appearances_t.keys():
+                appearances_t[letter] = 1
+            else:
+                appearances_t[letter] += 1
+        return dict(sorted(appearances_s.items())) == dict(sorted(appearances_t.items()))
+```
 ## Problem 345. Reverse Vowels of a String
 We are using two pointers, one at the left and one at the right. At the moment the left pointer reaches the right one we'll stop iterating. The left and right pointers will move in one iteration if the letter is a consonant. If the two letters are vowels, we swap them and continue to the next iteration.
 ```python
