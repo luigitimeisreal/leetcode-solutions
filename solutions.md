@@ -491,3 +491,26 @@ class Solution:
                 max_odd = frequencies[char2]
         return max_odd - min_even
 ```
+## Problem 3541. Find Most Frequent Vowel and Consonant
+Language: Python
+```python
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        vowels = "aeiou"
+        freq_vowels = {}
+        freq_cons = {}
+        for letter in s:
+            if letter in vowels:
+                if letter not in freq_vowels.keys():
+                    freq_vowels[letter] = 1
+                else:
+                    freq_vowels[letter] += 1
+            else:
+                if letter not in freq_cons.keys():
+                    freq_cons[letter] = 1
+                else:
+                    freq_cons[letter] += 1
+        max_vowel = max(freq_vowels.values()) if freq_vowels else 0
+        max_cons = max(freq_cons.values()) if freq_cons else 0
+        return max_vowel + max_cons
+```
