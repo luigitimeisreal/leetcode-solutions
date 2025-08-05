@@ -102,6 +102,20 @@ class Solution:
                     break
         return res
 ```
+## Problem 804. Unique Morse Code Words
+Language: Python
+```python
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        alphabet = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        res = set()
+        for word in words:
+            morse = ""
+            for letter in word:
+                morse = f"{morse}{alphabet[ord(letter) - 97]}"
+            res.add(morse)
+        return len(res)
+```
 ## Problem 965. Univalued Binary Tree
 Language: Python
 ```python
