@@ -532,3 +532,20 @@ class Solution:
         max_cons = max(freq_cons.values()) if freq_cons else 0
         return max_vowel + max_cons
 ```
+## Problem 3602. Hexadecimal and Hexatrigesimal Conversion
+Language: Python
+```python
+class Solution:
+    def concatHex36(self, n: int) -> str:
+        return f"{self.toBase(n * n, 16)}{self.toBase(n * n * n, 36)}"
+
+    def toBase(self, num, b) -> str:
+        res = ""
+        while num > 0:
+            digit = num % b
+            if len(str(digit)) >= 2:
+                digit = chr(digit + 55)
+            res = f"{digit}{res}"
+            num = num // b
+        return res
+```
