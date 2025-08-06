@@ -439,6 +439,24 @@ class Solution:
         return False
 
 ```
+## Problem 3174. Clear Digits
+Language: Python
+```python
+class Solution:
+    def clearDigits(self, s: str) -> str:
+        digit = True
+        while digit:
+            digit = False
+            for i in range(len(s) - 1):
+                j = i + 1
+                if s[j].isdigit():
+                    digit = True
+                    s = s[:i] + s[j+1:]
+                    print(i, j, s)
+                    break
+        return s
+            
+```
 ## Problem 3289. The Two Sneaky Numbers of Digitville
 We start by creating a dictionary tracking the appearances of every number. Then we loop through that dictionary and if we find any number appearing 2 times, we add it to the result array.
 Language: Python
