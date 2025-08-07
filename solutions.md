@@ -101,6 +101,32 @@ class Solution:
                 return row - 1
         return n
 ```
+## Problem 504. Base 7
+Language: JavaScript
+```javascript
+/**
+ * @param {number} num
+ * @return {string}
+ */
+var convertToBase7 = function(num) {
+    let res = "";
+    let isNegative = false;
+    if (num === 0) return "0";
+    if (num < 0) {
+        isNegative = true;
+    }
+    num = Math.abs(num);
+    while (num != 0) {
+        digit = num % 7;
+        res = `${digit}${res}`
+        num = ~~(num / 7)
+    }
+    if (isNegative) {
+        res = `-${res}`
+    }
+    return res;
+};
+```
 ## Problem 692. Top K Frequent Words
 Language:Python
 ```python
