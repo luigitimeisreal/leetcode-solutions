@@ -315,6 +315,22 @@ class Solution:
                 res += 1
         return res
 ```
+## Problem 2190. Most Frequent Number Following Key In an Array
+Language: Python
+```python
+class Solution:
+    def mostFrequent(self, nums: List[int], key: int) -> int:
+        targets = {}
+
+        for i in range(len(nums) - 1):
+            if nums[i] == key:
+                if nums[i + 1] not in targets.keys():
+                    targets[nums[i + 1]] = 1
+                else:
+                    targets[nums[i + 1]] += 1
+        
+        return max(targets, key=targets.get)
+```
 ## Problem 2395. Find Subarrays With Equal Sum
 Language: Python
 ```python
