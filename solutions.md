@@ -206,7 +206,23 @@ var findOcurrences = function(text, first, second) {
     return res;
 };
 ```
-## Prblem 1716. Calculate Money in Leetcode Bank
+## Problem 1684. Count the Number of Consistent Strings
+```python
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        res = 0
+        for word in words:
+            consistent = True
+            for letter in word:
+                if letter not in allowed:
+                    consistent = False
+                    break
+            if consistent:
+                res += 1
+        return res
+
+```
+## Problem 1716. Calculate Money in Leetcode Bank
 Language: Python
 ```python
 class Solution:
