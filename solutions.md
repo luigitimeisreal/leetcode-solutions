@@ -475,6 +475,18 @@ class Solution:
                 return True
         return False
 ```
+## Problem 3099. Harshad Number
+Language: Python
+```python
+class Solution:
+    def sumOfTheDigitsOfHarshadNumber(self, x: int) -> int:
+        sum = 0
+        num = x
+        while num != 0:
+            sum += num % 10
+            num //= 10
+        return sum if x % sum == 0 else -1
+```
 ## Problem 3136. Valid Word
 Language: Python
 ```python
