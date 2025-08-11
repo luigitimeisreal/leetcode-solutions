@@ -545,6 +545,30 @@ class Solution:
                 res.append(num)
         return res
 ```
+## Problem 3340. Check Balanced String
+Language: JavaScript
+```javascript
+/**
+ * @param {string} num
+ * @return {boolean}
+ */
+var isBalanced = function(num) {
+    let sumOdd = 0;
+    let sumEven = 0;
+
+    for (let i = 0; i < num.length; i++) {
+        digit = +num[i]
+        if (i % 2 == 0) {
+            sumOdd += digit;
+        } else {
+            sumEven += digit;
+        }
+    }
+
+    return sumOdd === sumEven;
+
+};
+```
 ## Problem 3423. Maximum Difference Between Adjacent Elements in a Circular Array
 Basically, we calculate the sum of the same array twice generating 2 cycles of the first array. Then we iterate with every number(i) and the next one(j), comparing the absolute value of the substraction using abs(). If we find a higher difference, we update the value and keep searching leading to the end result.
 Language: Python
