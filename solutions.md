@@ -206,6 +206,14 @@ var findOcurrences = function(text, first, second) {
     return res;
 };
 ```
+## Problem 1464. Maximum Product of Two Elements in an Array
+Language: Python
+```python
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        nums = sorted(nums)
+        return (nums[len(nums) - 1] - 1) * (nums[len(nums) - 2] - 1)
+```
 ## Problem 1684. Count the Number of Consistent Strings
 ```python
 class Solution:
