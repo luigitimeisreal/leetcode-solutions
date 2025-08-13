@@ -535,6 +535,28 @@ class Solution:
         return s
             
 ```
+## Problem 3178. Find the Child Who Has the Ball After K Seconds
+Language: Python
+```python
+class Solution:
+    def numberOfChild(self, n: int, k: int) -> int:
+        ball = -1
+        moves_right = True
+
+        for i in range(k + 1):
+            if ball < n - 1 and moves_right:
+                ball += 1
+            elif ball == n - 1 and moves_right:
+                moves_right = False
+                ball -= 1
+            elif ball == 0:
+                moves_right = True
+                ball += 1
+            elif ball < n - 1 and not moves_right:
+                ball -= 1
+        
+        return ball
+```
 ## Problem 3289. The Two Sneaky Numbers of Digitville
 We start by creating a dictionary tracking the appearances of every number. Then we loop through that dictionary and if we find any number appearing 2 times, we add it to the result array.
 Language: Python
