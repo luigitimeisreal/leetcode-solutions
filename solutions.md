@@ -339,6 +339,21 @@ class Solution:
         
         return max(targets, key=targets.get)
 ```
+## Problem 2264. Largest 3-Same-Digit Number in String
+Language: Python
+```python
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        res = ""
+        max_num = 0
+        for i in range(len(num) - 2):
+            if num[i] == num[i + 1] == num[i + 2]:
+                digit = ord(num[i])
+                if digit > max_num:
+                    max_num = digit
+                    res = num[i:i + 3]
+        return res
+```
 ## Problem 2395. Find Subarrays With Equal Sum
 Language: Python
 ```python
