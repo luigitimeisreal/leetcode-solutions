@@ -510,6 +510,17 @@ class Solution:
             num //= 10
         return sum if x % sum == 0 else -1
 ```
+## Problem 3110. Score of a String
+Language: Python
+```python
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+        res = 0
+        for i in range(len(s) - 1):
+            res += abs(ord(s[i]) - ord(s[i + 1]))
+        return res
+
+```
 ## Problem 3136. Valid Word
 Language: Python
 ```python
