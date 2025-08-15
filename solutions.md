@@ -270,6 +270,23 @@ class Solution:
             return -1
         return max_difference
 ```
+## Problem 2057. Smallest Index With Equal Value
+Language: Python
+```python
+class Solution:
+    def smallestEqual(self, nums: List[int]) -> int:
+        min_index = float("inf")
+
+        for i in range(len(nums)):
+            if i % 10 == nums[i] and i < min_index:
+                min_index = i
+        
+        if min_index == float("inf"):
+            return -1
+
+        return min_index
+
+```
 ## Problem 2124. Check if All A's Appears Before All B's
 We initialize a boolean variable at the start of the program checking if whle iterating the string, we have reached the first B. If we then find an a after b, we return false. Otherwise, we return true at the end of the string.
 Language: JavaScript
