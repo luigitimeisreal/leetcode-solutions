@@ -206,6 +206,22 @@ var findOcurrences = function(text, first, second) {
     return res;
 };
 ```
+## Problem 1323. Maximum 69 Number
+Language: Python
+```python
+class Solution:
+    def maximum69Number (self, num: int) -> int:
+        max_num = num
+        num = str(num)
+        for i in range(len(num)):
+            if num[i] == "9":
+                new_num = int(f"{num[:i]}6{num[i + 1:]}")
+            else:
+                new_num = int(f"{num[:i]}9{num[i + 1:]}")
+            if new_num > max_num:
+                max_num = new_num
+        return max_num
+```
 ## Problem 1464. Maximum Product of Two Elements in an Array
 Language: Python
 ```python
