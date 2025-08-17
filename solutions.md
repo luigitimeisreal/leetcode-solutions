@@ -206,6 +206,19 @@ var findOcurrences = function(text, first, second) {
     return res;
 };
 ```
+## Problem 1317. Convert Integer to the Sum of Two No-Zero Integers
+```python
+class Solution:
+    def getNoZeroIntegers(self, n: int) -> List[int]:
+        if n %2 == 0:
+            new_num = [int(n / 2), int(n / 2)]
+        else:
+            new_num = [int(n / 2), int(n / 2) + 1]
+        while "0" in str(new_num[0]) or "0" in str(new_num[1]):
+            new_num[0] += 1
+            new_num[1] -= 1
+        return new_num
+```
 ## Problem 1323. Maximum 69 Number
 Language: Python
 ```python
