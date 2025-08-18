@@ -414,6 +414,22 @@ class Solution:
         return False
 
 ```
+## Problem 2414. Length of the Longest Alphabetical Continuous Substring
+Language: Python
+```python
+class Solution:
+    def longestContinuousSubstring(self, s: str) -> int:
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        if len(s) > 26:
+            max_size = 26
+        else:
+            max_size = len(s)
+
+        for i in range(max_size, 0, -1):
+            for j in range(len(s) - i + 1):
+                if s[j:j + i] in alphabet:
+                    return len(s[j:j + i])
+```
 ## Problem 2460. Apply Operations to an Array
 Language: JavaScript
 ```javascript
