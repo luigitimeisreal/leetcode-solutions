@@ -567,6 +567,26 @@ class Solution:
         return res
 
 ```
+## Problem 3120. Count the Number of Special Characters I
+Language: Python
+```python
+class Solution:
+    def numberOfSpecialChars(self, word: str) -> int:
+        res = 0
+        characters = {}
+        for char in word:
+            if char.upper() == char and char.lower() in word:
+                if char.lower() not in characters.keys():
+                    characters[char.lower()] = 1
+                else:
+                    characters[char.lower()] += 1
+            if char.lower() == char and char.upper() in word:
+                if char.lower() not in characters.keys():
+                    characters[char.lower()] = 1
+                else:
+                    characters[char.lower()] += 1
+        return len(characters)
+```
 ## Problem 3136. Valid Word
 Language: Python
 ```python
