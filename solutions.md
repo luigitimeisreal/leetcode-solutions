@@ -358,6 +358,31 @@ var countPairs = function(nums, k) {
     return pairs.length;
 };
 ```
+## Problem 2180. Count Integers With Even Digit Sum
+Language: JavaScript
+```javascript
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var countEven = function(num) {
+    let currentNum = 0;
+    let res = 0;
+    for (let i = 1; i <= num; i++) {
+        currentNum = i;
+        sum = 0;
+        while (currentNum !== 0) {
+            sum += currentNum % 10;
+            currentNum = Math.floor(currentNum / 10);
+        }
+        if (sum % 2 == 0) {
+            console.log(i, sum);
+            res++;
+        }
+    }
+    return res;
+};
+```
 ## Problem 2185. Counting Words With a Given Prefix
 Language: Python
 ```python
