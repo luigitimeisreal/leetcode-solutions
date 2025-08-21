@@ -511,6 +511,22 @@ var maximumCount = function(nums) {
     
 };
 ```
+## Problem 2544. Alternating Digit Sum
+Language: Python
+```python
+class Solution:
+    def alternateDigitSum(self, n: int) -> int:
+        n = int(str(n)[::-1])
+        i, sum = 0, 0
+        while n != 0:
+            if i % 2 == 0:
+                sum += n % 10
+            else:
+                sum -= n % 10
+            i += 1
+            n //= 10
+        return sum
+```
 ## Problem 2710. Remove Trailing Zeros From a String
 First, we need to check if the last character is a zero. If it is, we count the number of zeros starting from the last digit. Then we return the substring from the start up to the first trailing zero. Language: Python
 ```python
