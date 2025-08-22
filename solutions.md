@@ -782,6 +782,24 @@ class Solution:
                 max_odd = frequencies[char2]
         return max_odd - min_even
 ```
+## Problem 3452. Sum of Good Numbers
+Language: Python
+```python
+class Solution:
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        sum = 0
+        for i in range(len(nums)):
+            good_num = True
+            if i - k >= 0:
+                if nums[i - k] >= nums[i]:
+                    good_num = False
+            if i + k < len(nums):
+                if nums[i + k] >= nums[i]:
+                    good_num = False
+            if good_num:
+                sum += nums[i]
+        return sum
+```
 ## Problem 3541. Find Most Frequent Vowel and Consonant
 Language: Python
 ```python
