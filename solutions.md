@@ -249,9 +249,9 @@ We start by casting the number to string and reversing it (we could also iterate
 class Solution:
     def thousandSeparator(self, n: int) -> str:
         res = ""
-        n = str(n)
-        for i in range(len(n) - 1, -1, -1):
-            if i % 3 == 0 and i != len(n) - 1:
+        n = str(n)[::-1]
+        for i in range(len(n)):
+            if i % 3 == 0 and i != 0:
                 res = f"{n[i]}.{res}"
             else:
                 res = f"{n[i]}{res}"
