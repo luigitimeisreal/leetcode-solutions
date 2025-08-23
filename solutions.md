@@ -243,6 +243,20 @@ class Solution:
         nums = sorted(nums)
         return (nums[len(nums) - 1] - 1) * (nums[len(nums) - 2] - 1)
 ```
+## Problem 1556. Thousand Separator
+We start by casting the number to string and reversing it (we could also iterate backwards). Then in every position that is divisible by 3, we append a point and if not, we simply add the digit. Language: Python
+```python
+class Solution:
+    def thousandSeparator(self, n: int) -> str:
+        res = ""
+        n = str(n)
+        for i in range(len(n) - 1, -1, -1):
+            if i % 3 == 0 and i != len(n) - 1:
+                res = f"{n[i]}.{res}"
+            else:
+                res = f"{n[i]}{res}"
+        return res
+```
 ## Problem 1684. Count the Number of Consistent Strings
 ```python
 class Solution:
