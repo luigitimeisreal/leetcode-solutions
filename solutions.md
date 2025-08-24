@@ -424,6 +424,19 @@ class Solution:
         
         return max(targets, key=targets.get)
 ```
+## Problem 2259. Remove Digit From Number to Maximize Result
+Language: Python
+```python
+class Solution:
+    def removeDigit(self, number: str, digit: str) -> str:
+        max_number = 0
+        for i in range(len(number)):
+            if number[i] == digit:
+                new_number = int(number[:i] + number[i+1:])
+                if new_number > max_number:
+                    max_number = new_number
+        return str(max_number)
+```
 ## Problem 2264. Largest 3-Same-Digit Number in String
 Language: Python
 ```python
