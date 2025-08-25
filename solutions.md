@@ -651,6 +651,13 @@ class Solution:
         return res
 
 ```
+## Problem 3131. Find the Integer Added to Array I
+Language: Python
+```python
+class Solution:
+    def addedInteger(self, nums1: List[int], nums2: List[int]) -> int:
+        return sorted(nums2)[0] - sorted(nums1)[0]
+```
 ## Problem 3120. Count the Number of Special Characters I
 Language: Python
 ```python
